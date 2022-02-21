@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content-view %}
+
+<div class="body">
+    <h1>Edit Expense</h1>
+    <div class="form">
+        <form method="POST" action="{% url 'edit expense' expense.pk %}" enctype="multipart/form-data">
+
+            {{ form }}
+            {% csrf_token %}
+
+            <input type="submit" value="Edit">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
